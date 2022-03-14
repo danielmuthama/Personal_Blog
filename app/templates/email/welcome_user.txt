@@ -1,0 +1,4 @@
+Hello {{user.username}}
+Welcome to the Le Blunt Blog
+Thank you for signing up to Le Blunt and Welcome to the family. Please enjoy reading the random quotes and my blog articles. Comment on your thoughts about them too. 
+Once Again Welcome

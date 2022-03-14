@@ -1,0 +1,28 @@
+{% macro displayBlog(blog_body) %}
+<div class="container-fluid">
+    <div class="row">
+        <div class=" d-flex">
+            {% for blogdata in blog_body %}
+            <div class="col-xs-12 col-md-12 col-sm-12 col-lg-12 card ">
+                <h4 class="text-center">{{ blogdata.blogtitle }}</h4>
+                <hr>
+                <p style="font-size:xx-large;">"</p>
+                <h5>{{blogdata.myblog}}</h5>
+                <hr>
+                <div>
+                    <p>Author : {{blogdata.author}}</p>
+                    <div class="text-right">
+                        <p class="">
+                            <span class="btn btn-dark">👍 </span>0
+
+                            <span class="btn btn-dark">👎  </span>0
+                        </p>
+                    </div>
+                </div>
+                <h4>Posted At : {{blogdata.postdate.strftime('%d/%m/%y')}}</h4>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endmacro %}

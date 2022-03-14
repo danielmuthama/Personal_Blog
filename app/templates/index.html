@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+{% block head %}
+{% block styles %}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+{{ super() }}
+<link rel="stylesheet"  href="{{ url_for('static', filename='../static/css/index.css') }}">
+{% endblock %}
+<title>{{ title }}</title>
+{% endblock %}
+
+{% block content %}
+<div class="container w-80">
+    <!-- Carousel body -->
+    <div id="carouselLightMode" class="carousel slide carousel-fade carousel-light pointer-event w-80 mx-auto" data-bs-ride="carousel">
+        <!-- Indicators --> 
+        <div class="carousel-indicators my-3">
+            <button data-bs-target="#carouselLightMode" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button data-bs-target="#carouselLightMode" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button data-bs-target="#carouselLightMode" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            <button data-bs-target="#carouselLightMode" data-bs-slide-to="3" aria-label="Slide 4"></button>
+            <button data-bs-target="#carouselLightMode" data-bs-slide-to="4" aria-label="Slide 5"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item overlay active">
+                <img src="../static/photos/sunrise.jpg" class="d-block w-100 pic" alt="different times of the day" height="600px">
+                <div class="carousel-caption  d-none d-md-block p-4" style="background-color:rgba(226, 225, 225, 0.5); color:black; transform: translate(-50%, -50%); position: absolute; top: 50%; left: 50%;-webkit-transform: translate(-50%, -50%); width:70%; height:60%">
+                    <h1>{{randomquotes.quote}}</h1>
+                    <p>{{randomquotes.author}}</p>
+                    <a href="{{randomquotes.permalink}}" class="btn btn-dark">Read More</a>
+
+                </div>
+            </div>
+            <div class="carousel-item overlay">
+                <img src="../static/photos/aztec.jpg" class="d-block w-100 pic" alt="different times of the day" height="600px">
+                <div class="carousel-caption d-none d-md-block p-4" style="background-color:rgba(226, 225, 225, 0.5); color:black; transform: translate(-50%, -50%); position: absolute; top: 50%; left: 50%;-webkit-transform: translate(-50%, -50%); width:70%; height:60%;">
+                    <h1>{{randomquotes1.quote}}</h1>
+                    <p>{{randomquotes1.author}}</p>
+                    <a href="{{randomquotes1.permalink}}" class="btn btn-dark">Read More</a>
+                </div>
+            </div>
+            <div class="carousel-item overlay">
+                <img src="../static/photos/trees.jpg" class="d-block w-100 pic" alt="different times of the day" height="600px">
+                <div class="carousel-caption d-none d-md-block p-4" style="background-color:rgba(226, 225, 225, 0.5); color:black; transform: translate(-50%, -50%); position: absolute; top: 50%; left: 50%;-webkit-transform: translate(-50%, -50%); width:70%; height:60%;">
+                    <h1>{{randomquotes2.quote}}</h1>
+                    <p>{{randomquotes2.author}}</p>
+                    <a href="{{randomquotes2.permalink}}" class="btn btn-dark">Read More</a>
+                </div>
+            </div>
+            <div class="carousel-item overlay">
+                <img src="../static/photos/AthensGreece.jpg" class="d-block w-100 pic" alt="different times of the day" height="600px">
+                <div class="carousel-caption d-none d-md-block p-4" style="background-color:rgba(226, 225, 225, 0.5); color:black; transform: translate(-50%, -50%); position: absolute; top: 50%; left: 50%;-webkit-transform: translate(-50%, -50%); width:70%; height:60%;">
+                    <h1>{{randomquotes3.quote}}</h1>
+                    <p>{{randomquotes3.author}}</p>
+                    <a href="{{randomquotes3.permalink}}" class="btn btn-dark">Read More</a>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="../static/photos/china.png" class="d-block w-100 pic" alt="different times of the day" height="600px">
+                <div class="carousel-caption d-none d-md-block p-4" style="background-color:rgba(226, 225, 225, 0.5); color:black; transform: translate(-50%, -50%); position: absolute; top: 50%; left: 50%;-webkit-transform: translate(-50%, -50%); width:70%; height:60%;">
+                    <h1>{{randomquotes4.quote}}</h1>
+                    <p>{{randomquotes4.author}}</p>
+                    <a href="{{randomquotes4.permalink}}" class="btn btn-dark">Read More</a>
+                </div>
+            </div>
+        </div>
+        
+
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselLightMode" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselLightMode" data-bs-slide="prev">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+</div>
+
+
+{% endblock %}

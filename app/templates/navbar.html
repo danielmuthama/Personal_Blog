@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+<body>
+</body>
+{% block content %}
+<div class="navbar navbar-default navbar-static-top" role="navigation">
+    <div class="container-fluid d-inline">
+        <a href="/" class="navbar-brand navbar-logo mt-0 mx-3">Le Blunt</a>
+        <div class="collapse navbar-collapse" >
+            <ul class="nav navbar-nav d-inline" >
+                <li class="mx-3 d-block"><a href="/">Home</a></li>
+                <li class="mx-3 d-block"><a href="/">About</a></li>
+                <li class="mx-3 d-block"><a href="/">Contacts</a></li>
+                {% if current_user.is_authenticated %}
+                <li class="mx-3 d-block"><a href="{{url_for('main.userblogpage')}}">Blog</a></li>
+                {% endif %}
+            </ul>
+            <div class="navbar navbar-nav navbar-right signlog d-inline">
+                {% if current_user.is_authenticated %}
+                <div class="d-flex">
+                    <div class="my-auto mx-3 addblog">
+                        <a href="{{url_for('main.createblog')}}" class="btn btn-primary "><i class="fa fa-plus"></i> Add Blog</a>
+                    </div>
+                    <div class="nav-item dropdown mx-3" >
+                        <a href=""  class="nav-link dropdown-toggle user-action" data-bs-toggle="dropdown">
+                            <img src="{{url_for('static', filename='user.profile_pic_path')}}" class="avatar" alt="Avatar">
+                            <h5 class="d-inline">{{ current_user.username }} </h5>
+                            <!-- <b class="caret"></b> -->
+                        </a>
+                        <div class="dropdown-menu" style="position:absolute !important;">
+                            <a href="{{url_for('main.profile', uname=current_user.username)}}" class="dropdown-item">
+                                <i class="fa fa-user-o"></i>
+                                Profile
+                            </a>
+                            <a href="" class="dropdown-item">
+                                <i class="fa fa-envelope"></i>
+                                Messages
+                            </a>
+                            <div class="divider dropdown-divider"></div>
+                            <a href="{{url_for('auth.logout')}}" class="dropdown-item">
+                                <i class="fa fa-sign-out"></i>
+                                Logout
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                {% else %}
+                <div class="my-auto mx-3 signup d-inline">
+                    <a href="{{url_for('auth.signup')}}" class="btn btn-success ">Sign Up</a>
+                </div>
+                <div class="my-auto mx-3 login d-inline">
+                    <a href="{{url_for('auth.login')}}" class="btn btn-primary">
+                        Log In
+                    </a>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+</html>
+
+
+
+
+
+
+
+
+<!-- <h4 class="d-inline">{{ current_user.username }} </h4>
+<img src="../static/images/profile.png" alt="user ppic" height="50px" width="50px" class="d-inline">
+<div class="my-auto mx-3 signout d-inline">
+    <a href="{{url_for('main.profile', uname=current_user.username)}}" class="btn btn-primary ">View Profile</a>
+</div>
+<div class="my-auto mx-3 signout d-inline">
+    <a href="{{url_for('auth.logout')}}" class="btn btn-primary ">Sign out</a>
+</div> -->

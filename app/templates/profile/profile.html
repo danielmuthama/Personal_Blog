@@ -1,0 +1,38 @@
+{% extends 'base.html'%}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <!-- display Username -->
+        <div class="col-md-4">
+            <h3> {{ user.username | capitalize }}</h3>
+
+            <!-- Displaying User Bio -->
+            {% if user.bio %}
+                <p> {{ user.bio }}</p>
+            {% else %}
+                <p> {{user.username | capitalize }} </p>
+            {% endif %}
+        </div>
+        <div class="col-md-4">
+        <!-- Display Profile Photo -->
+        {% if user.profile_pic_path %}
+            <img src="{{url_for('static', filename='user.profile_pic_path')}}" alt="ppic" class="img-thumbnail">
+        {% else %}
+            <p>No Profile Picture</p>
+        {% endif %}
+        </div>
+        <!-- changeppic -->
+        {% if user == current_user %}
+        <form action="{{url_for('main.updateppic', uname=user.username)}}" method="post" enctype = "multipart/form-data">
+            <input type="file" name="photo" class="form-control" required>
+            <input type="submit">
+        </form>
+        {% endif %}
+        {% if user == current_user %}
+            <a href="{{url_for('main.updateprofile', uname=user.username)}}">Edit Profile</a>
+        {% endif %}
+    </div>
+</div>
+
+{% endblock %}

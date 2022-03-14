@@ -1,0 +1,25 @@
+
+    {% extends 'base.html' %}
+    {% import 'bootstrap/wtf.html' as wtf %}
+    {% block head %}
+    <!-- css link -->
+    {% block styles %}
+    <!--bootstrap link-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    {{ super() }}
+    <link rel="stylesheet"  href="{{ url_for('static', filename='../static/css/userpage.css') }}">
+    {% endblock %}
+    <title>{{ title }}</title>
+    {% endblock %}
+    
+    {% block content %}
+    <!-- quote body starts here -->
+    <div class="container-fluid">
+        <div class="row col-sm-12 col-md-12 col-lg-12 my-3 mr-3">
+            <div class="col-sm-4 col-md-4 col-lg-4 card mx-auto">
+                {{ wtf.quick_form(blog_form) }}
+
+            </div>
+        </div>
+    </div>
+    {% endblock %}
