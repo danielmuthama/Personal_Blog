@@ -1,6 +1,6 @@
 # p_Blog
 
-### P_Blog is a web application platform that gives you the opportunity to read, comment, upvote/downvote on blog posts by the admin. Topics covered are from a range of relevant topics and being able to comment and see other users comments allows interactiveness amongst community members
+>  P_Blog is a web application platform that gives you the opportunity to read, comment, upvote/downvote on blog posts by the admin. Topics covered are from a range of relevant topics and being able to comment and see other users comments allows interactiveness amongst community members
 
 #### By **Daniel Muthama**
 
